@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+  </head>
+  <body bgcolor="lightgreen">
+    <table width="100%" bgcolor="yellow">
+      <tr>
+        <th><a href="home.html">Home</a></th>
+        <th><a href="about.html">About</a></th>
+        <th><a href="product.html">Product</a></th>
+        <th><a href="register.html">Register</a></th>
+        <th><a href="contact.html">Contact</a></th>
+      </tr>
+    </table>
+    <form action="" method="post">
+
+        <!-- Post - Hidden Contents or Get - Visible Contents -->
+         
+        <table bgcolor="orange" align="center">
+            <caption><h2>Registration Form</h2></caption>
+            <tr>
+                <td>
+                    <label for="fname"> Enter First Name </label>
+                </td>
+                <td>
+                    <input type="text" maxlength="25" size="11" name="First Name" id="fname" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lname"> Enter Last Name </label>
+                </td>
+                <td>
+                    <input type="text" maxlength="25" size="11" name="Last Name" id="lname" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email"> Enter Email Id </label>
+                </td>
+                <td>
+                    <input type="email" maxlength="25" size="11" name="Primary Mail" id="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password"> Enter Password </label>
+                </td>
+                <td>
+                    <input type="password" maxlength="25" size="11" name="Password" id="password" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender"> Gender </label>
+                </td>
+                <td>
+                    <input type="radio" name="gender-identity" id="male" value="Male" />
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender-identity" id="female" value="Female" />
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="skills"> Skills </label>
+                </td>
+                <td>
+                    <input type="checkbox" name="skill" id="python" value="Python" />
+                    <label for="python">Python</label>
+                    <input type="checkbox" name="skill" id="html" value="HTML" />
+
+                    <label for="html">HTML</label>
+                    <input type="checkbox" name="skill" id="css" value="CSS" />
+                    <label for="css">CSS</label>
+                    <input type="checkbox" name="skill" id="javascript" value="JavaScript" />
+                    <label for="javascript">JavaScript</label>
+                    <input type="checkbox" name="skill" id="jquery" value="jQuery" />
+                    <label for="jquery">jQuery</label>
+                    <input type="checkbox" name="skill" id="bootstrap" value="Bootstrap" />
+                    <label for="bootstrap">Bootstrap</label>
+                    <input type="checkbox" name="skill" id="java" value="Java" />
+                    <label for="java">Java</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">DOB</label>
+                </td>
+                <td><input type="date" name="DOB" id="dob" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="images">Images </label>
+                </td>
+                <td>
+                    <input type="file" name="images" id="images" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">Country </label>
+                </td>
+                <td>
+                    <input name="country" name="country" size="11" id="country" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="state">State </label>
+                </td>
+                <td>
+                    <input name="state" name="state" size="11" id="state" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="city">City </label>
+                </td>
+                <td>
+                    <input name="city" name="city" size="11" id="city" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pincode">Pincode : </label>
+                </td>
+                <td>
+                    <input name="pincode" name="pincode" size="11" id="pincode" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address </label>
+                </td>
+                <td>
+                    <input name="address" name="address" size="11" id="address" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="job city">Preferred Location </label>
+                </td>
+                <td>
+                    <select name="preferred location" id="job city">
+                        <option value="noida">Noida</option>
+                        <option value="pune">Pune</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="indore">Indore</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="feedback">Feedback</label>
+                </td>
+                <td>
+                    <textarea name="feedback" id="feedback" cols="30" rows="10"> </textarea>
+                </td>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="submit" value="Submit" />
+                    <input type="reset" value="Cancel" />
+                </td>
+            </tr>
+            </tr>
+        </table>
+    </form> 
+</body>
+</html>
