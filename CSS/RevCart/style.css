@@ -1,0 +1,303 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#f2f2f2}
+a{text-decoration:none;color:inherit}
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:14px 30px;
+background:#d8d9ea;
+border-bottom:1px solid #ddd;
+position:sticky;
+top:0;
+z-index:100
+}
+.logo{
+position:absolute;
+left:30px;
+background:linear-gradient(135deg,#893cc8,#420561);
+color:#fff;
+padding:10px 22px;
+border-radius:14px;
+font-size:24px;
+font-weight:bold
+}
+.menu{
+list-style:none;
+display:flex;
+gap:28px;
+font-size:18px;
+font-weight:bold
+}
+.menu li a:hover{color:#4e10e9}
+.nav-right{
+position:absolute;
+right:30px;
+display:flex;
+gap:15px;
+align-items:center
+}
+.nav-right input{
+width:260px;
+padding:10px 18px;
+border-radius:25px;
+border:1px solid #ccc
+}
+.cart{
+background:#ff3f6c;
+color:#fff;
+padding:10px 14px;
+border-radius:50%
+}
+
+.layout{display:flex}
+
+.sidebar{
+width:280px;
+background:#fff;
+padding:30px 25px;
+border-right:1px solid #ddd;
+min-height:100vh
+}
+.sidebar h3{
+font-size:24px;
+margin-bottom:14px
+}
+
+.sidebar-box{
+background:#f7f7f7;
+padding:16px;
+margin-bottom:20px;
+border-radius:16px;
+transition:0.3s
+}
+
+.sidebar-box:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15)
+}
+
+.cat-box{
+list-style:none
+}
+.cat-box li{
+padding:10px;
+margin:8px 0;
+border-radius:25px;
+font-size:18px;
+text-align:center;
+transition:0.3s
+}
+.cat-box li:hover{
+background:linear-gradient(135deg,#ff5f9e,#ff8dc7);
+color:#fff
+}
+
+.blue{
+background:linear-gradient(135deg,#7fd9ff,#b8ecff);
+color:#003a52
+}
+.blue h4{
+font-size:22px;
+margin-bottom:10px
+}
+
+.pill-list{
+list-style:none
+}
+.pill-list li{
+background:rgba(255,255,255,0.7);
+margin:8px 0;
+padding:8px 14px;
+border-radius:25px;
+font-size:16px;
+transition:0.3s
+}
+.pill-list li:hover{
+background:#fff
+}
+
+.shop-text{
+margin-top:8px;
+font-size:16px;
+font-weight:bold
+}
+
+.center{text-align:center}
+
+.support p{
+font-size:16px;
+margin:6px 0
+}
+
+.content{flex:1}
+
+.banner{
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+text-align:center;
+padding:70px 20px
+}
+.banner h1{
+font-size:40px;
+color:#ffd700
+}
+.banner p{
+margin:10px 0 18px;
+font-size:18px;
+color:#00eaff
+}
+.banner button{
+padding:12px 34px;
+background:#ff3f6c;
+border:none;
+color:#fff;
+border-radius:30px;
+font-size:16px
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:40px
+}
+.card{
+background:#fff;
+border-radius:18px;
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
+overflow:hidden;
+text-align:center
+}
+.card img{
+width:100%;
+height:240px;
+object-fit:cover
+}
+.card h4{
+margin:16px;
+font-size:18px
+}
+.card a{
+display:inline-block;
+margin-bottom:18px;
+padding:10px 26px;
+background:#b56fd8;
+color:#fff;
+border-radius:22px
+}
+
+.footer{
+background:#222;
+color:#fff;
+text-align:center;
+padding:18px
+}
+
+@media(max-width:900px){
+.cards{grid-template-columns:repeat(2,1fr)}
+.sidebar{
+position:fixed;
+left:-100%;
+top:0;
+height:100%;
+z-index:200;
+transition:0.3s
+}
+.sidebar.show{left:0}
+}
+@media(max-width:600px){
+.cards{grid-template-columns:1fr}
+.nav-right input{width:200px}
+}
+
+@keyframes blink {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.banner button{
+  animation: blink 1.2s infinite;
+  cursor: pointer;
+}
+
+.quote{
+margin-top:14px;
+font-size:17px;
+color:#ffde59;
+font-style:italic;
+line-height:1.6;
+animation: floatText 2.5s infinite;
+}
+
+@keyframes floatText{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
+
+.newyear{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 50px;
+gap:20px
+}
+
+.banner-left,.banner-center,.banner-right{
+flex:1
+}
+
+.banner-left{
+color:#ffde59;
+font-size:16px;
+line-height:1.6
+}
+
+.banner-center{
+text-align:center
+}
+
+.banner-center h1{
+font-size:42px;
+color:#ffd700
+}
+
+.banner-center p{
+font-size:18px;
+color:#00eaff;
+margin:10px 0
+}
+
+.banner-right{
+text-align:right;
+color:#ffde59;
+font-size:15px
+}
+
+.small-quote{
+font-style:italic;
+margin-bottom:10px
+}
+
+.blink{
+animation:blinkBtn 1s infinite
+}
+
+@keyframes blinkBtn{
+0%{opacity:1}
+50%{opacity:0.4}
+100%{opacity:1}
+}
+
+@media(max-width:900px){
+.newyear{
+flex-direction:column;
+text-align:center
+}
+.banner-left,.banner-right{
+text-align:center
+}
+}
