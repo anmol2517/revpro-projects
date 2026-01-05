@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Tech Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#1d2671,#c33764);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.card{max-width:800px;width:100%;border-radius:16px;}
+.option-btn{width:100%;text-align:left;margin-bottom:10px;border-radius:10px;}
+.option-btn:hover{background:#969d0f;}
+.correct{background:#12700c!important;}
+.wrong{background:#b81010!important;}
+.top-bar{display:flex;justify-content:space-between;font-weight:600;}
+.timer{color:#4b24a5;}
+</style>
+</head>
+
+<body>
+
+<!-- NAME -->
+<div class="card p-4 shadow" id="nameScreen">
+<h3 class="text-center text-primary">📝 Online Tech Test</h3>
+<input type="text" id="username" class="form-control my-3" placeholder="Enter your name">
+<button class="btn btn-primary w-100" id="goInstruction">Continue</button>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="card p-4 shadow d-none" id="instructionScreen">
+<h4 class="text-center">📌 Instructions</h4>
+<ul>
+<li>Total Questions: <b>10</b></li>
+<li>Total Time: <b>2 Minutes</b></li>
+<li>You can navigate using <b>Next / Previous</b></li>
+<li>You can change answers before final submit</li>
+<li>Green = Correct | Red = Incorrect</li>
+<li>After submit, answers cannot be changed</li>
+</ul>
+<button class="btn btn-success w-100" id="startQuiz">Start Test</button>
+</div>
+
+<!-- QUIZ -->
+<div class="card p-4 shadow d-none" id="quizScreen">
+
+<div class="top-bar mb-2">
+<span id="qCount"></span>
+<span>👤 <span id="userTop"></span> | ⏱ <span class="timer" id="totalTime">02:00</span></span>
+</div>
+
+<hr>
+<h5 id="question"></h5>
+<div id="options"></div>
+
+<div class="d-flex gap-2">
+<button class="btn btn-secondary w-50" id="prevBtn">Previous</button>
+<button class="btn btn-primary w-50" id="nextBtn">Next</button>
+</div>
+
+<button class="btn btn-danger w-100 mt-3" id="goPreview">Preview Answers</button>
+</div>
+
+<!-- PREVIEW -->
+<div class="card p-4 shadow d-none" id="previewScreen">
+<h4 class="text-center">👀 Answer Preview</h4>
+<div id="previewBody"></div>
+<button class="btn btn-success w-100 mt-3" id="finalSubmit">Submit Test</button>
+</div>
+
+<script>
+let questions=[
+{q:"HTML stands for?",o:["Hyper Text Markup Language","High Text Machine","Hyper Tool","None"],a:0},
+{q:"CSS is used for?",o:["Logic","Styling","Database","OS"],a:1},
+{q:"JS is ___ language?",o:["Markup","Interpreted","Compiled","None"],a:1},
+{q:"Which is frontend?",o:["Node","React","MongoDB","MySQL"],a:1},
+{q:"Bootstrap is?",o:["Framework","DB","Server","OS"],a:0},
+{q:"DOM means?",o:["Document Object Model","Data Object","Design Model","None"],a:0},
+{q:"404 error means?",o:["OK","Redirect","Not Found","Server"],a:2},
+{q:"jQuery is?",o:["JS Library","CSS","Framework","DB"],a:0},
+{q:"Which tag links CSS?",o:["script","style","css","link"],a:3},
+{q:"Which is backend?",o:["HTML","CSS","Node","React"],a:2}
+];
+
+let index=0, answers=Array(10).fill(null), username="";
+let totalSeconds=120, examTimer;
+
+$("#goInstruction").click(()=>{
+ username=$("#username").val().trim();
+ if(!username) return alert("Enter your name");
+ $("#nameScreen").addClass("d-none");
+ $("#instructionScreen").removeClass("d-none");
+});
+
+$("#startQuiz").click(()=>{
+ $("#instructionScreen").addClass("d-none");
+ $("#quizScreen").removeClass("d-none");
+ $("#userTop").text(username);
+ startTimer();
+ loadQuestion();
+});
+
+function startTimer(){
+ examTimer=setInterval(()=>{
+  totalSeconds--;
+  let m=String(Math.floor(totalSeconds/60)).padStart(2,'0');
+  let s=String(totalSeconds%60).padStart(2,'0');
+  $("#totalTime").text(`${m}:${s}`);
+  if(totalSeconds<=0){
+    clearInterval(examTimer);
+    showPreview();
+  }
+ },1000);
+}
+
+function loadQuestion(){
+ let q=questions[index];
+ $("#question").text(q.q);
+ $("#qCount").text(`Question ${index+1}/10`);
+ $("#options").html("");
+ q.o.forEach((opt,i)=>{
+  let active=answers[index]==i?"btn-success":"btn-outline-dark";
+  $("#options").append(`<button class="btn ${active} option-btn" data-id="${i}">${opt}</button>`);
+ });
+}
+
+$(document).on("click",".option-btn",function(){
+ answers[index]=$(this).data("id");
+ loadQuestion();
+});
+
+$("#nextBtn").click(()=>{if(index<9){index++;loadQuestion();}});
+$("#prevBtn").click(()=>{if(index>0){index--;loadQuestion();}});
+
+$("#goPreview").click(showPreview);
+
+function showPreview(){
+ clearInterval(examTimer);
+ $("#quizScreen").addClass("d-none");
+ $("#previewScreen").removeClass("d-none");
+ let html="";
+ answers.forEach((a,i)=>{
+  let yourAns=a!==null?questions[i].o[a]:"Not Attempted";
+  let correct=questions[i].o[questions[i].a];
+  let color=(yourAns===correct)?"text-success":"text-danger";
+  html+=`<p><b>Q${i+1}:</b> ${questions[i].q}<br>
+  Your Answer: <span class="${color}">${yourAns}</span><br>
+  Correct Answer: <span class="text-success">${correct}</span></p><hr>`;
+ });
+ $("#previewBody").html(html);
+}
+
+$("#finalSubmit").click(()=>{
+ if(!confirm("Are you sure you want to submit? After submission, changes are not allowed.")) return;
+ let score=answers.filter((a,i)=>a===questions[i].a).length;
+ let grade = score>=9?"A+":score>=8?"A":score>=7?"B+":score>=6?"B":score>=5?"C":"Fail";
+ $("#previewScreen").html(`
+ <h3 class="text-center">Hi ${username}, Your Progress Report</h3>
+ <p>Total Questions: 10</p>
+ <p>Correct: ${score}</p>
+ <p>Grade: <b>${grade}</b></p>
+ <button class="btn btn-primary w-100" onclick="location.reload()">Restart</button>
+ `);
+});
+</script>
+
+</body>
+</html>
