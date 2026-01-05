@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallStack Function setTimeout</title>
+</head>
+<body>
+
+<script>
+    function first() {
+        console.log("First function");
+    }
+
+    function second() {
+        console.log("Second function start");
+        first();
+        console.log("Second function end");
+    }
+
+    console.log("Program started");
+
+    setTimeout(() => {
+        console.log("setTimeout callback");
+    }, 0);
+
+    second();
+
+    console.log("Program ended");
+</script>
+
+</body>
+</html>

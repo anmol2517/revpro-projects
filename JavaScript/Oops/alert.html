@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mydiv">
+        <form>
+            <input type="text" placeholder="Enter Name" name="name" id="name"/><br/><br/>
+            <input type="number" placeholder="Enter Number" name="age" id="age"/><br/><br/>
+            <input type="email" placeholder="Enter Mail Id" name="email" id="email"/><br/><br/>
+            <input type="password" placeholder="Enter PassCode" name="password" id="password"/><br/><br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+    <br><br>
+    
+    <input type="submit" value="click me" onclick="hello()"/>
+    <input type="submit" value="are u sure?" onclick="hey()"/>
+    <script>
+      function hello() {
+        alert("Its Alert Message...!");
+      }
+      function hey(){
+        var con = confirm("Its Confirm Message...!");  //  DataType : Boolean
+        alert(con);
+      }
+    </script>
+  </body>
+</html>

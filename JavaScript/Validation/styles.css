@@ -1,0 +1,23 @@
+body{
+    background-color: lightpink;
+}
+h3{
+    color: cadetblue;
+    background-color: black;
+    text-align: center;
+}
+table{
+    background-color: lightseagreen;
+    border: 3px solid black;
+    padding: 10px;
+    width: 500px;
+}
+label{
+    font-weight: bold;
+}
+.btn{
+    cursor: pointer;
+}
+.error{
+    color: red;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Stack Function</title>
+</head>
+<body>
+    <script>
+        function one() {
+    two();
+}
+ 
+function two() {
+    three();
+}
+
+function three() {
+    console.log("Hello Call Stack");
+}
+
+one();
+
+    </script>
+</body>
+</html>

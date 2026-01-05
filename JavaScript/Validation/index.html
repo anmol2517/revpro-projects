@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Validation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h3>Resister Here!</h3>
+    <table align="center">
+      <form action="" method="post" onsubmit="return validate()">
+        <tr>
+          <td>
+            <label for="fname">First Name</label>
+          </td>
+          <td>
+            <input type="text" name="fname" id="fname" />
+            <span class="error" id="fnameError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="lname">Last Name</label>
+            <span class="error" id="lnameError"></span>
+          </td>
+          <td>
+            <input type="text" name="lname" id="lname" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email ID</label>
+            <span class="error" id="emailError"></span>
+          </td>
+          <td>
+            <input type="email" name="email" id="email" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="pass">PassCode</label>
+            <span class="error" id="passError"></span>
+          </td>
+          <td>
+            <input type="password" name="pass" id="pass" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="gender">Gender</label>
+          </td>
+          <td>
+            <input type="radio" name="gen" id="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gen" id="female" />
+            <label for="female">Female</label>
+            <span class="error" id="genderError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="skill">Skill</label>
+          </td>
+          <td>
+            <input type="checkbox" name="skill" id="javascript" />
+            <label for="javascript">JavaScript</label>
+            <input type="checkbox" name="skill" id="python" />
+            <label for="python">Python</label>
+            <input type="checkbox" name="skill" id="java" />
+            <label for="java">Java</label>
+            <input type="checkbox" name="skill" id="springboot" />
+            <label for="springboot">SpringBoot</label>
+            <span class="error" id="skillError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="city">City</label>
+          </td>
+          <td>
+            <select name="city" id="city">
+              <option value="">--Select City--</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Noida">Noida</option>
+              <option value="New Delhi">New Delhi</option>
+              <option value="Others">Others</option>
+            </select>
+            <span class="error" id="cityError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input class="btn" type="submit" value="Sign-up" />
+          </td>
+        </tr>
+      </form>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>

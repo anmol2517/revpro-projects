@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("setTimeout inside promise");
+
+Promise.resolve().then(() => {
+    console.log("Promise");
+
+    setTimeout(() => {
+        console.log("Timeout");
+    }, 0);
+});
+
+    </script>
+</body>
+</html>

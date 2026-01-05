@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taking User Names Input</title>
+</head>
+<body>
+
+  <h3>Enter 4 Names</h3>
+
+  <input type="text" id="n1" placeholder="Name 1"><br><br>
+  <input type="text" id="n2" placeholder="Name 2"><br><br>
+  <input type="text" id="n3" placeholder="Name 3"><br><br>
+  <input type="text" id="n4" placeholder="Name 4"><br><br>
+
+  <button onclick="addNames()">Submit</button>
+
+  <h3 id="output"></h3>
+
+  <script>
+    function addNames() {
+      let names = [];
+
+      names.push(document.getElementById("n1").value);
+      names.push(document.getElementById("n2").value);
+      names.push(document.getElementById("n3").value);
+      names.push(document.getElementById("n4").value);
+
+      
+      let extraName = prompt("Enter one more name :");
+      names.push(extraName);
+
+      document.getElementById("output").innerText =
+        "Names : " + names.join(" , ");
+    }
+  </script>
+
+</body>
+</html>
