@@ -1,0 +1,30 @@
+#header{
+    background-color: black;
+    text-align: center;
+    color: aquamarine;
+}
+#footer{
+    background-color: black;
+    text-align: center;
+    color: cornsilk;
+}
+#menubar{
+    background-color: rgb(164, 26, 232); 
+    text-align: center;  
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 0px 0px 0px;
+    text-align: center; 
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    margin-right: 90px;
+}
+ul li a:hover{
+    color: yellow;
+    background-color: black;
+    font-weight: bold;
+}
