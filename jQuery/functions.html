@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+  </head>
+<body>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name"> <br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"> <br>
+
+        <label for="city">City</label>
+        <select name="city" id="city">
+            <option value="Gurugram">Gurugram</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Assam">Assam</option>
+            <option value="Bangalore">Bangalore</option>
+        </select> <br> <br>
+        <input type="submit" value="Click to submit">   
+    </form>
+    <script>
+        $(document).ready(function(){
+            $('#name, #email, #city').focus(function(){
+                $(this).css("background-color", "pink");
+                $(this).css("color", "blue");
+            });
+
+            $('#name, #email, #city').blur(function(){
+                $(this).css("background-color", "");
+                $(this).css("color", "");
+            });
+        });
+    </script>
+</body>
+</html>

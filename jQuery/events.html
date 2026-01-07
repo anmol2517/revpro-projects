@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="mydiv">
+      <h1>Universe..!</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid
+        dolores consequatur adipisci corrupti, dolor nobis nam temporibus
+        assumenda voluptatem velit fugiat consectetur quibusdam optio possimus
+        at laboriosam alias quia omnis!
+      </p>
+    </div>
+    <button class="mybtn">Click Me</button>
+    <script>
+    $(document).ready(function(){
+        var x = $(".mydiv").html();     //  HTML Function
+        console.log(x);
+
+        $(".mybtn").click(function(){
+            alert("Just Clicked..!");    //  Click Event
+        });
+
+        $(".mydiv").click(function(){
+            $(this).css("color", "red");   //  CSS Function
+            $(this).css("background-color", "gold");
+        });
+
+        $(".mydiv").dblclick(function(){
+            $(this).css("border", "3px solid blue");   
+            $(this).css("width", "250px");
+        });
+
+        $(".mydiv").contextmenu(function(){   
+            $(this).css("color", "cyan");   
+            $(this).css("width", "550px");
+        });
+
+        $(".mydiv").mouseenter(function(){   
+            $(this).css("background-color", "magenta");   
+            $(this).css("width", "550px");
+            $(this).css("border", "5px dotted purple");
+        });
+
+        $(".mydiv").mouseleave(function(){   
+            $(this).css("color", "green");   
+            $(this).css("width", "550px");
+            $(this).css("border", "5px dotted pink");
+        });
+    });
+    </script>
+  </body>
+</html>
