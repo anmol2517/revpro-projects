@@ -1,0 +1,46 @@
+---------MySQL Data Types---------
+________________________________________
+
+-->>  Numeric Data Types
+-->>  String Data Types
+-->>  Date & Time Data Types
+-->>  Binary / Bob
+-->>  Boolean
+-->>  Enum & Set
+-->>  JSON
+-->>  Spatial
+
+
+---------DELETE---------
+________________________________________
+
+-->>  Removes rows/data only
+-->>  Table structure remainshttps://chatgpt.com/
+-->>  Can use WHERE
+-->>  Can be rolled back (with transaction)
+
+
+---------DROP---------
+________________________________________
+
+-->>  Removes table completely
+-->>  Structure + data both deleted
+-->>  Cannot use WHERE
+-->>  Cannot be rolled back
+
+
+---------PostgreSQL Data Types---------
+________________________________________
+
+-->>  Numeric
+-->>  Monetary
+-->>  Character
+-->>  Binary
+-->>  Date / Time
+-->>  Boolean
+-->>  Enumerated
+-->>  Geometric / JSON / Network
+
+
+--------- ---------
+________________________________________
