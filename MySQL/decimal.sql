@@ -1,0 +1,11 @@
+USE moneyview;
+
+DROP TABLE IF EXISTS num1;
+
+CREATE TABLE num1 (price DECIMAL(5,2));
+
+DESC num1;
+
+INSERT INTO num1 VALUES (167.23);
+
+SELECT * FROM num1;
