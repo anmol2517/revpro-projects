@@ -1,0 +1,72 @@
+<!--
+http://localhost:8080/Servlets/formpage-browse/index.html
+-->
+
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Servlets : Registration Form</title>
+</head>
+<body>
+<form method="post" action="/Servlets/formurl">
+    <table bgcolor="#bdb76b" bordercolor="red" align="center" cellpadding="10">
+        <caption><h2>Registration Form!</h2></caption>
+        <tr>
+            <th><label for="fname">First Name</label></th>
+            <td><input type="text" name="fname" id="fname" placeholder="Enter First Name"></td>
+        </tr>
+        <tr>
+            <th><label for="lname">Last Name</label></th>
+            <td><input type="text" name="lname" id="lname" placeholder="Enter Last Name"></td>
+        </tr>
+        <tr>
+            <th><label for="num">Phone Number</label></th>
+            <td><input type="number" name="num" id="num" placeholder="Enter Phone Number"></td>
+        </tr>
+        <tr>
+            <th><label for="email">Email Id</label></th>
+            <td><input type="email" name="email" id="email" placeholder="Enter Email Address"></td>
+        </tr>
+        <tr>
+            <th><label for="pass">Password</label></th>
+            <td><input type="password" name="pass" id="pass" placeholder="Choose Strong Password"></td>
+        </tr>
+        <tr>
+            <th><label for="gender">Gender</label></th>
+            <td> <select name="gender" id="gender">
+                <option value="choose">Dropdown This</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Transgender">Transgender</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th><label>Select Skills</label></th>
+            <td>
+                <input type="checkbox" name="skill" value="Java"/> Java
+                <input type="checkbox" name="skill" value="MySQL"/> MySQL
+                <input type="checkbox" name="skill" value="Angular"/> Angular
+                <input type="checkbox" name="skill" value="Spring Boot"/> Spring Boot
+                <input type="checkbox" name="skill" value="AWS Cloud"/> AWS Cloud
+            </td>
+        </tr>
+        <tr>
+            <th><label for="address">Present Address</label></th>
+            <td><input type="text" name="address" id="address" placeholder="Enter Full Address"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Click to Register Here" style="font-weight: bold;">
+
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

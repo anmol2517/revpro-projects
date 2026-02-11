@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>Serve</servlet-name>
+        <servlet-class>FormPage.Serve</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Serve</servlet-name>
+        <url-pattern>/formurl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Calculation</servlet-name>
+        <servlet-class>CalciSum.Calculation</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Calculation</servlet-name>
+        <url-pattern>/calciurl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Responsive</servlet-name>
+        <servlet-class>bootstrapweb.Responsive</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Responsive</servlet-name>
+        <url-pattern>/booturl</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+
