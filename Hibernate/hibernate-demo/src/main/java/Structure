@@ -1,0 +1,176 @@
+Maine ek Java project banaya hai jisme maine Hibernate ki related dependencies add ki hain.
+
+### 🔹 Hibernate Configuration File
+
+Maine ek Hibernate configuration file banayi hai. Ye file important hoti hai kyunki iske through hum Hibernate ko batate hain:
+
+* Hamara database **kahan located hai**
+* Database se **connect kaise karna hai**
+* Hibernate ki kuch settings kya hongi
+* Data ko database me **kaise update** karna hai
+
+Hibernate automatically SQL queries generate karta hai aur output me show karta hai.
+
+### 🔹 DDL (Data Definition Language)
+
+DDL ek language hoti hai jo database ka structure define karti hai, jaise:
+
+* Table create karna
+* Columns define karna
+* Constraints set karna
+
+### 🔹 hibernate.hbm2ddl.auto = update
+
+Agar entity/class me koi structural change hota hai, toh wo database me bhi update hona chahiye.
+
+Iske liye hum ye property use karte hain:
+
+```xml
+<property name="hibernate.hbm2ddl.auto">update</property>
+```
+
+### 🔹 show_sql & format_sql
+
+* `show_sql` ka matlab hai Hibernate jo SQL query run kar raha hai, wo console me print hogi
+* `format_sql` ka matlab hai query properly formatted form me print hogi (readable)
+
+### 🔹 current_session_context_class = thread
+
+```xml
+<property name="hibernate.current_session_context_class">thread</property>
+```
+
+Iska matlab hai Hibernate automatically session create karta hai aur us session ko application ke current thread ke saath bind kar deta hai.
+
+---
+
+## ✅ Hibernate Working (SessionFactory & Session)
+
+Hibernate me:
+
+* Hum SessionFactory define karte hain
+* SessionFactory ke through entity classes register karte hain
+* Configuration create karte hain
+* `buildSessionFactory()` use karke SessionFactory ka object ready karte hain
+
+Phir SessionFactory ke object se hum Session lete hain.
+
+---
+
+## ✅ Entity Class Flow
+
+Main class me:
+
+* Sabse pehle ek class banayi
+* Usko `@Entity` mark kiya
+* `@Id` mark kiya (primary key ke liye, jo mandatory hota hai)
+* Getters aur Setters banaye
+* Constructor define kiya
+
+---
+
+## ✅ Run Hone Par
+
+`UserClassHibernate` entity hone ki wajah se:
+
+* Jaise hi application start hoti hai Hibernate automatically query generate karta hai
+* Run karne par pehle table create karta hai
+
+Main method me:
+
+* Maine session open kiya
+* User object ko `persist()` kiya
+
+Toh Hibernate automatically insert query run karta hai aur data database me insert ho jata hai.
+
+---
+---
+
+## ✅ English (Professional Translation)
+
+I created a Java project in which I added Hibernate-related dependencies.
+
+### 🔹 Hibernate Configuration File
+
+I created a Hibernate configuration file. This file is important because it helps us define:
+
+* Where the database is located
+* How Hibernate should connect to the database
+* Hibernate settings and properties
+* How data and schema updates should be handled
+
+Hibernate automatically generates SQL queries and shows them in the output.
+
+### 🔹 DDL (Data Definition Language)
+
+DDL is a language that defines the structure of database tables, such as:
+
+* Creating tables
+* Defining columns
+* Adding constraints
+
+### 🔹 hibernate.hbm2ddl.auto = update
+
+If any structural change happens in the entity/class, it should also be updated in the database.
+
+That is why we use this property:
+
+```xml
+<property name="hibernate.hbm2ddl.auto">update</property>
+```
+
+### 🔹 show_sql & format_sql
+
+* `show_sql` means Hibernate will print the generated SQL queries in the console
+* `format_sql` means the SQL queries will be printed in a properly formatted and readable way
+
+### 🔹 current_session_context_class = thread
+
+```xml
+<property name="hibernate.current_session_context_class">thread</property>
+```
+
+This means Hibernate automatically creates a session and binds it with the current application thread.
+
+---
+
+## ✅ Hibernate Working (SessionFactory & Session)
+
+In Hibernate:
+
+* We define a SessionFactory
+* Using SessionFactory, we register entity classes
+* We create configuration
+* We build the SessionFactory object using `buildSessionFactory()`
+
+Then, from the SessionFactory object, we get a Session.
+
+---
+
+## ✅ Entity Class Flow
+
+In the main class:
+
+* First, I created a class
+* Marked it as an `@Entity`
+* Marked the primary key using `@Id` (mandatory and unique)
+* Defined getters and setters
+* Created constructors
+
+---
+
+## ✅ On Application Run
+
+Since `UserClassHibernate` is mapped as an entity:
+
+* When the application starts, Hibernate automatically generates queries
+* On running the application, it first creates the table
+
+In the main method:
+
+* I opened a session
+* Persisted the user object using `persist()`
+
+Hibernate automatically executes the insert query and inserts the data into the database.
+
+---
