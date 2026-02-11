@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="email1" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="smtp.gmail.com"/>
+        <property name="protocol" value="SMTPS"/>
+        <property name="fromEmail" value="user@gmail.com"/>
+        <property name="port" value="465"/>
+        <property name="timeout" value="5000"/>
+    </bean>
+
+    <bean id="email2" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="smtp.office365.com"/>
+        <property name="protocol" value="TLS"/>
+        <property name="fromEmail" value="work@outlook.com"/>
+        <property name="port" value="587"/>
+        <property name="timeout" value="4000"/>
+    </bean>
+
+    <bean id="email3" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="smtp.mail.yahoo.com"/>
+        <property name="protocol" value="SSL"/>
+        <property name="fromEmail" value="personal@yahoo.com"/>
+        <property name="port" value="465"/>
+        <property name="timeout" value="6000"/>
+    </bean>
+
+    <bean id="email4" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="sandbox.smtp.mailtrap.io"/>
+        <property name="protocol" value="TCP"/>
+        <property name="fromEmail" value="test@mailtrap.io"/>
+        <property name="port" value="2525"/>
+        <property name="timeout" value="3000"/>
+    </bean>
+
+    <bean id="email5" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="mail.mycompany.com"/>
+        <property name="protocol" value="HTTPS"/>
+        <property name="fromEmail" value="admin@mycompany.com"/>
+        <property name="port" value="993"/>
+        <property name="timeout" value="8000"/>
+    </bean>
+
+    <bean id="email6" class="org.example.corelifecycle.EmailService" init-method="init" destroy-method="destroy">
+        <property name="host" value="mail.mycompany.com"/>
+        <property name="protocol" value="HTTPS"/>
+        <property name="fromEmail" value="rev@mycompany.com"/>
+        <property name="port" value="993"/>
+        <property name="timeout" value="8000"/>
+    </bean>
+
+</beans>
+
+
+

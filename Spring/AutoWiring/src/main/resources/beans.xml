@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book1" class="org.example.autowiring.Book">
+        <property name="title" value="Effective Java"/>
+        <property name="author" value="Revature"/>
+    </bean>
+
+    <bean id="book2" class="org.example.autowiring.Book">
+        <property name="title" value="Clean Code"/>
+        <property name="author" value="Cognizant"/>
+    </bean>
+
+    <bean id="book3" class="org.example.autowiring.Book">
+        <property name="title" value="Design Patterns"/>
+        <property name="author" value="Capgemini"/>
+    </bean>
+
+    <bean id="book4" class="org.example.autowiring.Book">
+        <property name="title" value="Spring in Action"/>
+        <property name="author" value="Infosys"/>
+    </bean>
+
+    <bean id="book5" class="org.example.autowiring.Book">
+        <property name="title" value="Head First Java"/>
+        <property name="author" value="Mastercard"/>
+    </bean>
+
+    <bean id="book6" class="org.example.autowiring.Book">
+        <property name="title" value="Java Concurrency"/>
+        <property name="author" value="Visa"/>
+    </bean>
+
+    <bean id="book7" class="org.example.autowiring.Book">
+        <property name="title" value="Test Driven Development"/>
+        <property name="author" value="Globant"/>
+    </bean>
+
+    <bean id="book8" class="org.example.autowiring.Book">
+        <property name="title" value="Refactoring"/>
+        <property name="author" value="Redhat"/>
+    </bean>
+
+    <bean id="student1" class="org.example.autowiring.Student">
+        <property name="name" value="Ankit"/>
+        <property name="id" value="101"/>
+    </bean>
+
+    <bean id="library1" class="org.example.autowiring.Library" autowire="byName"/>
+
+    <bean id="product" class="org.example.autowiring.Product" />
+
+    <bean id="seller1" class="org.example.autowiring.Seller" autowire="byType" />
+
+    <bean id="buyer1" class="org.example.autowiring.Buyer" autowire="constructor" />
+
+</beans>
+
+

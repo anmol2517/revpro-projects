@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="std1" class="org.example.jimmy.Student">
+        <property name = "name" value = "Babu Rao"/>
+        <property name = "roll" value = "111"/>
+        <property name = "city" value = "Pune"/>
+    </bean>
+
+    <bean id="std2" class="org.example.jimmy.Student">
+        <property name = "name" value = "Ganpat Rao Apte"/>
+        <property name = "roll" value = "222"/>
+        <property name = "city" value = "Mumbai"/>
+    </bean>
+
+    <bean id="std3" class="org.example.jimmy.Student">
+        <property name = "name" value = "Jethalal"/>
+        <property name = "roll" value = "333"/>
+        <property name = "city" value = "Surat"/>
+    </bean>
+
+    <bean id="std4" class="org.example.jimmy.Student">
+        <property name = "name" value = "Laurence Bishnoi"/>
+        <property name = "roll" value = "444"/>
+        <property name = "city" value = "Punjab"/>
+    </bean>
+
+    <bean id="std5" class="org.example.jimmy.Student">
+        <property name = "name" value = "Ratan Tata"/>
+        <property name = "roll" value = "555"/>
+        <property name = "city" value = "Jharkhand"/>
+    </bean>
+
+</beans>
+

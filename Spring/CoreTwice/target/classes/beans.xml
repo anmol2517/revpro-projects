@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myCar" class="org.example.coretwice.Cars">
+        <property name="owners">
+            <list>
+                <value>Digvijay</value>
+                <value>Shivam</value>
+                <value>Alok</value>
+                <value>Ranjan</value>
+                <value>Pradeep</value>
+                <value>Kunal</value>
+            </list>
+        </property>
+
+        <property name="cardetails">
+            <map>
+                <entry key="Digvijay" value="Mercedes GT3"/>
+                <entry key="Shivam" value="BMW X7"/>
+                <entry key="Alok" value="Mahindra XUV700"/>
+                <entry key="Ranjan" value="Audi Q3"/>
+                <entry key="Pradeep" value="Tata Safari"/>
+                <entry key="Kunal" value="Tesla Model S"/>
+            </map>
+        </property>
+
+        <property name="engineDetails">
+            <map>
+                <entry key="Mercedes GT3" value="4.0L V8 Biturbo"/>
+                <entry key="BMW X7" value="3.0L TwinPower Turbo"/>
+                <entry key="Mahindra XUV700" value="2.2L mHawk Diesel"/>
+                <entry key="Tata Safari" value="2.0L Kryotec Diesel"/>
+                <entry key="Audi Q3" value="2.0L TFSI Petrol"/>
+                <entry key="Tesla Model S" value="Dual Motor Electric"/>
+            </map>
+        </property>
+
+        <property name="carMileage">
+            <map>
+                <entry key="Mercedes GT3" value="8 kmpl"/>
+                <entry key="BMW X7" value="12 kmpl"/>
+                <entry key="Mahindra XUV700" value="15 kmpl"/>
+                <entry key="Tata Safari" value="14 kmpl"/>
+                <entry key="Audi Q3" value="17 kmpl"/>
+                <entry key="Tesla Model S" value="400 miles range"/>
+            </map>
+        </property>
+    </bean>
+</beans>
