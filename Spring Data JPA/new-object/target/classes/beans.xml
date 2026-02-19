@@ -1,0 +1,99 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bus" class="org.example.Student">
+        <property name="name" value="James Bond"/>
+        <property name="age" value="25"/>
+        <property name="roll" value="21"/>
+    </bean>
+
+    <bean id="car" class="org.example.Cars">
+        <property name="company" value="TATA"/>
+        <property name="car_name" value="Harrier"/>
+    </bean>
+
+    <bean id="tech" class="org.example.TechIndustry">
+        <constructor-arg value="Revature"/>
+        <constructor-arg value="Java Full Stack"/>
+    </bean>
+
+    <bean id="singletonScope" class="org.example.Scopes" scope="singleton">
+        <property name="name" value="SingletonObject"/>
+    </bean>
+
+    <bean id="prototypeScope" class="org.example.Scopes" scope="prototype">
+        <property name="name" value="PrototypeObject"/>
+    </bean>
+
+    <bean id="wiring" class="org.example.Wiring" autowire="byType"/>
+
+    <bean id="collections" class="org.example.Collections">
+        <property name="names">
+            <list>
+                <value>Baburao</value>
+                <value>GanpatRao</value>
+                <value>BaluMafia</value>
+            </list>
+        </property>
+
+        <property name="cities">
+            <set>
+                <value>Pune</value>
+                <value>Mumbai</value>
+                <value>Bangalore</value>
+            </set>
+        </property>
+
+        <property name="countryCapital">
+            <map>
+                <entry key="India" value="New Delhi"/>
+                <entry key="USA" value="Washington"/>
+                <entry key="UK" value="London"/>
+            </map>
+        </property>
+
+        <property name="config">
+            <props>
+                <prop key="env">production</prop>
+                <prop key="version">1.0</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="setDirectory" class="org.example.SetDirectory">
+        <property name="fileList">
+            <list>
+                <value>file1.txt</value>
+                <value>file2.doc</value>
+                <value>file3.pdf</value>
+            </list>
+        </property>
+        <property name="folderSet">
+            <set>
+                <value>Documents</value>
+                <value>Downloads</value>
+                <value>Pictures</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="innerBeanExample" class="org.example.BeanInner">
+        <property name="owner" value="Rohit"/>
+        <property name="student">
+            <bean class="org.example.Student">
+                <property name="name" value="Inner James"/>
+                <property name="age" value="30"/>
+                <property name="roll" value="101"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="usingAttr" class="org.example.UsingAttribute">
+        <property name="student" ref="bus"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+</beans>
